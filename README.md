@@ -51,14 +51,14 @@ Bringing the Parquet formatted data back into the scenario, the script loads it 
 
 With the loaded Parquet data, a new temporary view is created, paving the way for SQL operations on this optimized data.
 
-1️⃣3️⃣ 📈 Parquet Data Analysis and Performance Measurement
+### 1️⃣3️⃣ 📈 Parquet Data Analysis and Performance Measurement
 
 The script performs SQL operations on the Parquet DataFrame and measures its runtime, facilitating a comparison with the cached version's performance.
 
-1️⃣4️⃣ 💨 Uncaching
+### 1️⃣4️⃣ 💨 Uncaching
 
 The script concludes the caching process by uncaching the 'home_sales' temporary table, ensuring a clean wrap-up of the caching procedure.
 
-1️⃣5️⃣ 🔍 Cache State Verification
+### 1️⃣5️⃣ 🔍 Cache State Verification
 
 Finally, the script checks if the 'home_sales' table has been correctly uncached.
