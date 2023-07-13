@@ -11,15 +11,15 @@ Our adventure begins by configuring the necessary environment variables for Spar
 
 The script pulls in a dataset residing in an AWS S3 bucket and loads it into a DataFrame, which is essentially a distributed collection of data neatly organized into named columns.
 
-3️⃣ 🖼️ Temporary View Creation
+### 3️⃣ 🖼️ Temporary View Creation
 
 To employ SQL operations on our DataFrame, the script creates a temporary view. This temporary view allows the application of SQL-based perspectives on the data.
 
-4️⃣ 📊 Data Analysis
+### 4️⃣ 📊 Data Analysis
 
 With the power of SQL operations, the script embarks on answering intriguing questions about the average prices of houses. It dives into determining the average price for four-bedroom houses sold each year (rounded to two decimal places) and houses that were built with 3 bedrooms and 3 bathrooms.
 
-5️⃣ 🏘️ Advanced Home Analysis
+### 5️⃣ 🏘️ Advanced Home Analysis
 
 The script further refines the data analysis by focusing on the average price of homes that have specific attributes - three bedrooms, three bathrooms, two floors, and a size of at least 2,000 square feet.
 
