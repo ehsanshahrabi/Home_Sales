@@ -39,15 +39,15 @@ The script verifies if the table 'home_sales' is successfully cached, ensuring t
 
 With the cached data, the script reruns the query about 'view' ratings and average price, and once again tracks its runtime. This allows for a comparison of performance before and after caching.
 
-🔟 🔲 Data Partitioning and Formatting
+### 🔟 🔲 Data Partitioning and Formatting
 
 The script demonstrates the use of partitioning and Parquet formatting for optimization. It partitions the DataFrame by the 'date_built' field and writes it in Parquet format.
 
-1️⃣1️⃣ 📂 Parquet Data Loading
+### 1️⃣1️⃣ 📂 Parquet Data Loading
 
 Bringing the Parquet formatted data back into the scenario, the script loads it into a new DataFrame, preparing for further operations.
 
-1️⃣2️⃣ 🏢 Temporary View Creation for Parquet Data
+### 1️⃣2️⃣ 🏢 Temporary View Creation for Parquet Data
 
 With the loaded Parquet data, a new temporary view is created, paving the way for SQL operations on this optimized data.
 
