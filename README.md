@@ -1,13 +1,13 @@
 
 # 🏠 SparkSQL: Home Sales Data Exploration 🎇
 
-🎢 Journey Itinerary
+## 🎢 Journey Itinerary
 
-1️⃣ 🛠️ Environment Setup
+### 1️⃣ 🛠️ Environment Setup
 
 Our adventure begins by configuring the necessary environment variables for Spark and Java. The script automatically installs Spark and Java and initializes a SparkSession, the entry point to any Spark functionality.
 
-2️⃣ 📦 Data Loading
+### 2️⃣ 📦 Data Loading
 
 The script pulls in a dataset residing in an AWS S3 bucket and loads it into a DataFrame, which is essentially a distributed collection of data neatly organized into named columns.
 
