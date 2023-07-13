@@ -23,19 +23,19 @@ With the power of SQL operations, the script embarks on answering intriguing que
 
 The script further refines the data analysis by focusing on the average price of homes that have specific attributes - three bedrooms, three bathrooms, two floors, and a size of at least 2,000 square feet.
 
-6️⃣ 👁️ View Ratings and Performance Measurement
+### 6️⃣ 👁️ View Ratings and Performance Measurement
 
 The script evaluates the 'view' rating for the average price of a home, where the homes are valued at $350,000 or higher. Simultaneously, it tracks the runtime for this operation, providing a real-time performance measure.
 
-7️⃣ 🚀 Data Caching
+### 7️⃣ 🚀 Data Caching
 
 To increase the efficiency of data operations, the script caches the 'home_sales' temporary table. Caching results in faster queries, especially noticeable in repeated data access scenarios.
 
-8️⃣ 🕵️ Cache Verification
+### 8️⃣ 🕵️ Cache Verification
 
 The script verifies if the table 'home_sales' is successfully cached, ensuring the efficiency of subsequent operations.
 
-9️⃣ 🔄 Cached Query Execution and Runtime Comparison
+### 9️⃣ 🔄 Cached Query Execution and Runtime Comparison
 
 With the cached data, the script reruns the query about 'view' ratings and average price, and once again tracks its runtime. This allows for a comparison of performance before and after caching.
 
