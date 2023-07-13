@@ -1,64 +1,90 @@
 
 # 🏠 SparkSQL: Home Sales Data Exploration 🎇
 
-## 🎢 Journey Itinerary
+The provided code is a Python script that uses SparkSQL to analyze home sales data. It performs various operations such as reading data from a CSV file, creating temporary views, executing SQL queries, caching and uncaching tables, and working with parquet formatted data. Here's a breakdown of the script:
 
-### 1️⃣ 🛠️ Environment Setup
+### Set up the environment:
 
-Our adventure begins by configuring the necessary environment variables for Spark. The script automatically installs Spark and initializes a SparkSession, the entry point to any Spark functionality.
+It sets the Spark version and installs Spark and Java dependencies.
 
-### 2️⃣ 📦 Data Loading
+It imports the necessary packages and initializes SparkSession.
 
-The script pulls in a dataset residing in an AWS S3 bucket and loads it into a DataFrame, which is essentially a distributed collection of data neatly organized into named columns.
+### Read the data:
 
-### 3️⃣ 🖼️ Temporary View Creation
+The script reads home sales data from an AWS S3 bucket into a DataFrame.
 
-To employ SQL operations on our DataFrame, the script creates a temporary view. This temporary view allows the application of SQL-based perspectives on the data.
+The DataFrame is displayed using the show() method.
 
-### 4️⃣ 📊 Data Analysis
+### Create a temporary view:
 
-With the power of SQL operations, the script embarks on answering intriguing questions about the average prices of houses. It dives into determining the average price for four-bedroom houses sold each year (rounded to two decimal places) and houses that were built with 3 bedrooms and 3 bathrooms.
+The DataFrame is registered as a temporary view named "home_sales".
 
-### 5️⃣ 🏘️ Advanced Home Analysis
+### Calculate the average price for four-bedroom houses sold each year:
 
-The script further refines the data analysis by focusing on the average price of homes that have specific attributes - three bedrooms, three bathrooms, two floors, and a size of at least 2,000 square feet.
+A SQL query is executed using SparkSQL to calculate the average price for four-bedroom houses sold in each year.
 
-### 6️⃣ 👁️ View Ratings and Performance Measurement
+The result is displayed using the show() method.
 
-The script evaluates the 'view' rating for the average price of a home, where the homes are valued at $350,000 or higher. Simultaneously, it tracks the runtime for this operation, providing a real-time performance measure.
+### Calculate the average price for homes with three bedrooms and three bathrooms, grouped by the year built:
 
-### 7️⃣ 🚀 Data Caching
+Another SQL query is executed to calculate the average price for homes with three bedrooms and three bathrooms, grouped by the year built.
 
-To increase the efficiency of data operations, the script caches the 'home_sales' temporary table. Caching results in faster queries, especially noticeable in repeated data access scenarios.
+The result is displayed using the show() method.
 
-### 8️⃣ 🕵️ Cache Verification
+### Calculate the average price for homes with three bedrooms, three bathrooms, two floors, and a minimum size of 2,000 square feet, grouped by the year built:
 
-The script verifies if the table 'home_sales' is successfully cached, ensuring the efficiency of subsequent operations.
+A SQL query is executed to calculate the average price for homes with specific criteria, grouped by the year built.
 
-### 9️⃣ 🔄 Cached Query Execution and Runtime Comparison
+The result is displayed using the show() method.
 
-With the cached data, the script reruns the query about 'view' ratings and average price, and once again tracks its runtime. This allows for a comparison of performance before and after caching.
+### Calculate the average view rating for homes with an average price greater than or equal to $350,000:
 
-### 🔟 🔲 Data Partitioning and Formatting
+A SQL query is executed to calculate the average view rating for homes with an average price above a certain threshold.
 
-The script demonstrates the use of partitioning and Parquet formatting for optimization. It partitions the DataFrame by the 'date_built' field and writes it in Parquet format.
+The result is displayed using the show() method.
 
-### 1️⃣1️⃣ 📂 Parquet Data Loading
+The query execution time is measured using time.time().
 
-Bringing the Parquet formatted data back into the scenario, the script loads it into a new DataFrame, preparing for further operations.
+### Cache the temporary table:
 
-### 1️⃣2️⃣ 🏢 Temporary View Creation for Parquet Data
+The temporary table "home_sales" is cached using the cache table SQL command.
 
-With the loaded Parquet data, a new temporary view is created, paving the way for SQL operations on this optimized data.
+### Check if the table is cached:
 
-### 1️⃣3️⃣ 📈 Parquet Data Analysis and Performance Measurement
+The isCached method is used to check if the "home_sales" table is cached.
 
-The script performs SQL operations on the Parquet DataFrame and measures its runtime, facilitating a comparison with the cached version's performance.
+### Re-run the query on the cached data:
 
-### 1️⃣4️⃣ 💨 Uncaching
+The same query from Step 7 is executed again on the cached table.
 
-The script concludes the caching process by uncaching the 'home_sales' temporary table, ensuring a clean wrap-up of the caching procedure.
+The result is displayed, and the query execution time is measured.
 
-### 1️⃣5️⃣ 🔍 Cache State Verification
+### Partition and write the DataFrame in parquet format:
 
-Finally, the script checks if the 'home_sales' table has been correctly uncached.
+The DataFrame is partitioned by the "date_built" field and written to disk in parquet format.
+
+### Read the parquet formatted data:
+
+The parquet data is read into a DataFrame named "p_df".
+
+### Create a temporary view for the parquet data:
+
+The DataFrame "p_df" is registered as a temporary view named "home_sales_parquet".
+
+### Re-run the query on the parquet data:
+
+The same query from Step 7 is executed on the parquet data.
+
+The result is displayed, and the query execution time is measured.
+
+### Uncache the temporary table:
+
+The temporary table "home_sales" is uncached using the uncache table SQL command.
+
+### Check if the table is no longer cached:
+
+The isCached method is used to verify that the "home_sales" table is no longer cached.
+
+### Stop the SparkSession:
+
+The SparkSession is stopped to release resources.
